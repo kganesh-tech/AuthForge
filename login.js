@@ -29,6 +29,10 @@ document.getElementById("loginForm");
  .then(res => res.json())
  .then(data => {
     alert(data.message);
+    
+    localStorage.setItem("username", username);
+    window.location.href="dashboard.html";
+    
  })
  .catch(err => {
     console.log(err);

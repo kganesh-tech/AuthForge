@@ -1,0 +1,106 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#f5f7fc;
+}
+
+/* Navbar */
+
+.navbar{
+    height:70px;
+    background:#1b1d31;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 50px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#6C63FF;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.avatar{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+}
+
+#username{
+    font-size:18px;
+    font-weight:600;
+}
+
+#logoutBtn{
+    padding:10px 20px;
+    border:none;
+    border-radius:8px;
+    background:#6C63FF;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#logoutBtn:hover{
+    background:#5548f3;
+}
+
+/* Hero */
+
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:80vh;
+}
+
+.welcome-card{
+
+    width:700px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:50px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+}
+
+.welcome-card h1{
+    font-size:40px;
+    color:#222;
+}
+
+.welcome-card h2{
+    color:#6C63FF;
+    margin-top:20px;
+    font-size:32px;
+}
+
+.welcome-card p{
+    margin-top:20px;
+    color:#666;
+    font-size:18px;
+}

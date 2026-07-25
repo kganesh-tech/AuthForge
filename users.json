@@ -46,5 +46,11 @@
     "username": "sreeja",
     "email": "k.ganesh6286@gmail.com",
     "password": "$2b$10$bq47/r0dUdqkeotR0tMrauvsNp8hMb7xV.xCCksecHTcpmbaznAnq"
+  },
+  {
+    "fullName": "bunny",
+    "username": "bunny",
+    "email": "bunny@123",
+    "password": "$2b$10$IZEAmdmLAmBpkFtC.OjLAOug7g7ju3Aowgh3KXwIl8ff8Acjn.0ny"
   }
 ]
