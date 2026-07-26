@@ -12,6 +12,8 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Dynamic Username Display
 -Local Storage Session Management
 -Logout Functionality
+-Added localStorage based user profile data handling
+- Created profile page to display user details
 
 ## TECH STACK:
 -HTML
@@ -35,6 +37,12 @@ AuthForge is a backend authentication project built using Node.js and Express.js
   - Displays the logged-in users's username dynamically.
   - Stores the logged-in username using Local Storage.
   - Added Logout functionality.
+## Day 3:
+- implemented the profile page for displaying user details
+- implemented localStorage to store and retrieve user information
+- Connected signup data with profile display
+- Added dashboard and profile UI improvements
+- Debugged frontend and backend authntication flow
 
  ## Upcoming Features:
  -Duplicate Username & Email Validation
