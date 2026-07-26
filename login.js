@@ -29,10 +29,11 @@ document.getElementById("loginForm");
  .then(res => res.json())
  .then(data => {
     alert(data.message);
+    if(data.message === "Login successful") {
     
     localStorage.setItem("username", username);
     window.location.href="dashboard.html";
-    
+    }
  })
  .catch(err => {
     console.log(err);

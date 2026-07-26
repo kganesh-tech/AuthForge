@@ -1,13 +1,27 @@
 const username =
 localStorage.getItem("username");
 
-document.getElementById("username").textContent = username;
+document.getElementById("userName").textContent = username;
+document.getElementById("userUsername").textContent = username;
 
 document.getElementById("welcomeUser").textContent = username;
 
-const logoutBtn =
- document.getElementById("logoutBtn");
+const profileIcon =
+document.getElementById("profileIcon");
+const profileMenu =
+document.getElementById("profileMenu");
 
- logoutBtn.addEventListener("click" , function()  {
-              window.location.href = "login.html";
- })
+profileIcon.addEventListener("click", function() {
+    if(profileMenu.style.display === "block") {
+        profileMenu.style.display = "none";
+    } else {
+        profileMenu.style.display = "block";
+    }
+});
+
+document.addEventListener("click" , function(event) {
+    if(!profileIcon.contains(event.target) && !profileMenu.contains(event.target)) {
+        profileMenu.style.display = "none";
+    }
+    
+});

@@ -1,51 +1,42 @@
-const form =
-  document.getElementById("signupForm");
+const form = document.getElementById("signupForm");
 
-form.addEventListener("submit" , function(event)  {
+form.addEventListener("submit", async function(event) {
     event.preventDefault();
+    event.stopPropagation();
 
-    console.log("Form submitted");
-
-    const fullName =
-    document.getElementById("fullName").value;
-    const username =
-    document.getElementById("username").value;
-    const email =
-    document.getElementById("email").value;
-    const password =
-    document.getElementById("password").value;
-    const confirmPassword =
-    document.getElementById("confirmPassword").value;
+    console.log("Submit started");
 
     const users = {
-        fullName,
-        username,
-        email,
-        password,
-        confirmPassword
+        fullName: document.getElementById("fullName").value,
+        username: document.getElementById("username").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        confirmPassword: document.getElementById("confirmPassword").value
     };
 
-    fetch("http://localhost:3000/users",  {
-        method : "POST",
-        headers : {
+    try {
+        const response = await fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(users)
+        });
 
-         "Content-Type" : "application/json"
-        },
+        const data = await response.json();
 
-          body : JSON.stringify(users)
-    })
-
-    .then(res => {
-        console.log("Status:", res.status);
-           return res.json();
-})
-    .then (data => {
-        console.log(data.message);
         alert(data.message);
-        window.location.href="login.html";
-    })
 
-    .catch(error => {
+        if (data.message === "user registered successfully") {
+
+            localStorage.setItem("fullName", users.fullName);
+            localStorage.setItem("username", users.username);
+            localStorage.setItem("email", users.email);
+
+            window.location.href = "./login.html";
+        }
+
+    } catch(error) {
         console.log(error);
-    });
+    }
 });
