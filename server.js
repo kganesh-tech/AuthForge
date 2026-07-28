@@ -95,6 +95,64 @@ app.post("/login", async(req,res) => {
     });
 });
 
+app.get("/users" , (req,res) => {
+    fs.readFile("users.json" , "utf-8" , (err,data) => {
+        if(err) {
+            return res.status(400).json({
+                message: "Error reading users"
+            });
+        }
+        const users = JSON.parse(data);
+    
+    res.json(users);
+});
+});
+
+app.put("/users/:username" , (req,res) => {
+          const oldUsername =
+            req.params.username;
+          const newFullName = req.body.fullName;
+          const newusername = req.body.username;
+          const newEmail = req.body.email;
+
+          fs.readFile("users.json" , "utf-8", (err,data) => {
+            if(err) {
+                return res.status(400).json({
+                    message : "error in reading file"
+                });
+            }
+            const users = JSON.parse(data);
+
+            const user = users.find(user => user.username === oldUsername);
+
+            if(!user) {
+                return res.status(400).json({
+                    message : "User not found"
+                });
+            }
+            user.fullName = newFullName;
+            user.username = newusername;
+            user.email = newEmail;
+
+            fs.writeFile("users.json" , JSON.stringify(users , null, 2) , (err) => {
+                if(err) {
+                    return res.status(400).json({
+                        message : "unable to read file"
+                    });
+
+                    
+                }
+
+                return res.status(200).json({
+                    message : "profile updated successfully"
+                });
+
+            });
+            
+        
+        });
+
+});
 
 
 app.listen(3000, () => {
