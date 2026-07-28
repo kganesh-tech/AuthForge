@@ -14,6 +14,10 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Logout Functionality
 -Added localStorage based user profile data handling
 - Created profile page to display user details
+- Edit Profile functionality
+- Update user profile details using PUT API
+- Username-based user identification for profile updates
+- Backend profile update handling using Express.js
 
 ## TECH STACK:
 -HTML
@@ -42,7 +46,17 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - implemented localStorage to store and retrieve user information
 - Connected signup data with profile display
 - Added dashboard and profile UI improvements
-- Debugged frontend and backend authntication flow
+- Debugged frontend and backend authentication flow
+
+## Day 4:
+-Implement Edit Profile functionality
+-Added username-based profile update flow
+-Passed username from profile page to edit profile page usin URL parameters
+-Created PUT API for updating user details
+-Updated Full Name, Username, and Email in users.json
+-Connected frontend profile update form with backend API
+-Debugged and fixed profile update flow between frontend and backend
+
 
  ## Upcoming Features:
  -Duplicate Username & Email Validation
@@ -50,7 +64,7 @@ AuthForge is a backend authentication project built using Node.js and Express.js
  - Protected Routes
  - MongoDB Integration
  - Google OAuth
- - Github oAuth
+ - Github OAuth
  - Forgot Password
  - Email Verification
  - Role-Based Authntication
