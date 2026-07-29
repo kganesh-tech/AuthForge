@@ -18,6 +18,12 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - Update user profile details using PUT API
 - Username-based user identification for profile updates
 - Backend profile update handling using Express.js
+- Change password functionality
+- current password verification before password update
+- Secure new password hashing using bcrypt
+- Updated password Storage in users.json
+- Separate password update API flow
+  
 
 ## TECH STACK:
 -HTML
@@ -56,6 +62,18 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Updated Full Name, Username, and Email in users.json
 -Connected frontend profile update form with backend API
 -Debugged and fixed profile update flow between frontend and backend
+
+## Day 5:
+-Implemented secure Change password functionality
+-Added current password verification before allowing password changes
+-Used bcrypt.compare() to verify the existing hashed password
+-Added new password hashing using bcrypt.hash()
+-Updated the users password securely in users.json
+-Added password confirmation validation
+-Created a separate password update API
+-Connected change password frontend from with backend API
+-Debugged and fixed duplicate PUT route issue in Express.js
+-Verified that users can login successfully using the updated password.
 
 
  ## Upcoming Features:
