@@ -108,7 +108,7 @@ app.get("/users" , (req,res) => {
 });
 });
 
-app.put("/users/:username" , (req,res) => {
+app.put("/users/profile/:username" , (req,res) => {
           const oldUsername =
             req.params.username;
           const newFullName = req.body.fullName;
@@ -142,6 +142,7 @@ app.put("/users/:username" , (req,res) => {
 
                     
                 }
+                
 
                 return res.status(200).json({
                     message : "profile updated successfully"
@@ -153,6 +154,61 @@ app.put("/users/:username" , (req,res) => {
         });
 
 });
+app.put("/users/password/:username" , async(req,res) => {
+    const oldUsername = req.params.username;
+    const currentPassword = req.body.currentPassword;
+    const newPassword = req.body.newPassword;
+    const confirmPassword = req.body.confirmPassword;
+
+    fs.readFile("users.json" , "utf-8" , async(err,data) => {
+        if(err) {
+            return res.status(400).json({
+                message: "unable to read the file"
+            });
+        }
+        if(newPassword != confirmPassword) {
+            return res.status(400).json({
+                message : "Passwords doesnot match"
+            });
+        }
+        const users = JSON.parse(data);
+
+        const user = users.find(user => user.username === oldUsername );
+         if(!user) {
+            return res.status(400).json({
+                message : "user not found"
+            });
+         }
+         const isMatch = await bcrypt.compare(currentPassword , user.password);
+
+         if(!isMatch) {
+            return res.status(400).json({
+                message : "current password is incorrect"
+            });
+         }
+
+         const hashedPassword = await bcrypt.hash(newPassword , 10);
+
+
+          user.password = hashedPassword;
+        
+        fs.writeFile("users.json" , JSON.stringify(users , null , 2) , (err) => {
+
+            if(err) {
+                return res.status(400).json({
+                    message : "unable to write file"
+                });
+            }
+
+            res.status(200).json({
+                message : "password changed succesfully"
+            });
+
+        });
+            
+        
+        });
+    });
 
 
 app.listen(3000, () => {

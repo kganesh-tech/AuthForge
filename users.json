@@ -220,5 +220,14 @@
     "username": "vishnu",
     "email": "vishnu@123",
     "password": "$2b$10$9aFdwcJxaEXrh8kJ89zIF./3bxoYc77CBGQ9NqKf9olJPz6mzxPxm"
+  },
+  {
+    "password": "$2b$10$OYbETjz0edCPaXZ9.uNGwuTIOdrMLeyoaTZiOMBujHdZcQSwmimZS"
+  },
+  {
+    "fullName": "Katigari",
+    "username": "pandu",
+    "email": "pandu@123",
+    "password": "$2b$10$1Iz5qZk59PZXNeZNOnO0ieyNg5zC8oACfP8tLuOwRCCHDkvN9MOwi"
   }
 ]

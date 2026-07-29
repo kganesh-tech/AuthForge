@@ -32,6 +32,7 @@ document.getElementById("loginForm");
     if(data.message === "Login successful") {
     
     localStorage.setItem("username", username);
+   
     window.location.href="dashboard.html";
     }
  })

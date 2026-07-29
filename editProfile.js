@@ -22,7 +22,7 @@ console.log(newFullName);
 console.log(newusername);
 console.log(newEmail);
 
-fetch(`http://localhost:3000/users/${username}` , {
+fetch(`http://localhost:3000/users/profile/${username}` , {
     method : "PUT",
     headers : {
         "Content-Type" : "application/json"

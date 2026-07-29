@@ -25,3 +25,17 @@ document.addEventListener("click" , function(event) {
     }
     
 });
+
+const changePasswordBtn =
+ document.getElementById("changePasswordBtn");
+
+ changePasswordBtn.addEventListener("click" , function(event)  {
+    event.preventDefault();
+
+
+    const username =
+     localStorage.getItem("username");
+     
+
+     window.location.href = `changePassword.html?username=${username}`;
+ });
