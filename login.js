@@ -41,6 +41,16 @@ document.getElementById("loginForm");
  });
 });
 
+const forgotBtn =
+document.getElementById("forgotBtn");
+
+console.log(forgotBtn);
+forgotBtn.addEventListener("click" , function() {
+   console.log("clicked");
+
+   window.location.href="forgotPassword.html";
+});
+
  
  
 

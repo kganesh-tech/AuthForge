@@ -6,183 +6,178 @@
 }
 
 body{
-
-    min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    background:#0b1120;
-
-    color:white;
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
 }
 
-.login-container{
-
+.container{
     width:100%;
     display:flex;
     justify-content:center;
     align-items:center;
-
-    padding:30px;
+    padding:20px;
 }
 
-.login-card{
-
+.login-box{
     width:420px;
-
-    background:#151c2e;
-
-    border:1px solid rgba(255,255,255,.08);
-
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
     border-radius:20px;
-
     padding:40px;
-
-    box-shadow:0 0 30px rgba(124,58,237,.15);
+    color:white;
+    box-shadow:0 20px 45px rgba(0,0,0,0.4);
+    text-align:center;
 }
 
 .logo{
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    gap:12px;
-
-    margin-bottom:25px;
+    gap:10px;
+    margin-bottom:20px;
 }
 
 .logo i{
-
+    font-size:32px;
     color:#8b5cf6;
-    font-size:34px;
 }
 
 .logo h2{
-
     font-size:28px;
 }
 
-.login-card h1{
-
-    text-align:center;
-    margin-bottom:10px;
+h1{
+    margin-bottom:8px;
 }
 
-.login-card p{
-
-    text-align:center;
+.login-box p{
     color:#cbd5e1;
-
     margin-bottom:25px;
 }
 
 .input-box{
-
-    background:#0b1120;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:10px;
-
-    display:flex;
-    align-items:center;
-
-    padding:14px 18px;
-
-    margin-bottom:18px;
+    position:relative;
+    margin-bottom:20px;
 }
 
 .input-box i{
-
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
     color:#8b5cf6;
-
-    margin-right:12px;
 }
 
 .input-box input{
-
     width:100%;
-
+    padding:14px 15px 14px 50px;
     border:none;
     outline:none;
-
-    background:transparent;
-
+    border-radius:12px;
+    background:rgba(255,255,255,0.12);
     color:white;
-
-    font-size:16px;
+    font-size:15px;
 }
 
-button{
-
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:#8b5cf6;
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-button:hover{
-
-    transform:translateY(-3px);
-}
-
-.divider{
-
-    text-align:center;
-
-    margin:25px 0;
-
-    color:#94a3b8;
-}
-
-.social-buttons{
-
-    display:flex;
-    flex-direction:column;
-
-    gap:15px;
-}
-
-.google-btn,
-.github-btn{
-
-    background:transparent;
-
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.signup-text{
-
-    margin-top:25px;
-
-    text-align:center;
-
+.input-box input::placeholder{
     color:#cbd5e1;
 }
 
-.signup-text a{
+.input-box input:focus{
+    border:2px solid #8b5cf6;
+}
 
-    color:#8b5cf6;
-
-    text-decoration:none;
-
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    margin-top:12px;
+    cursor:pointer;
+    font-size:16px;
     font-weight:600;
+    transition:.3s;
+}
+
+form button{
+    background:#7c3aed;
+    color:white;
+}
+
+form button:hover{
+    background:#6d28d9;
+    transform:translateY(-2px);
+}
+
+button:nth-of-type(2){
+    background:transparent;
+    color:#a78bfa;
+    border:1px solid #8b5cf6;
+}
+
+button:nth-of-type(2):hover{
+    background:#8b5cf6;
+    color:white;
+}
+
+.divider{
+    display:flex;
+    align-items:center;
+    margin:25px 0;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#555;
+}
+
+.divider span{
+    margin:0 12px;
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.google{
+    background:white;
+    color:#333;
+}
+
+.google:hover{
+    background:#f1f1f1;
+}
+
+.github{
+    background:#24292e;
+    color:white;
+}
+
+.github:hover{
+    background:#111;
+}
+
+.google i,
+.github i{
+    margin-right:8px;
+}
+
+.signup{
+    margin-top:25px;
+    font-size:15px;
+}
+
+.signup a{
+    color:#8b5cf6;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.signup a:hover{
+    text-decoration:underline;
 }
