@@ -23,7 +23,8 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - Secure new password hashing using bcrypt
 - Updated password Storage in users.json
 - Separate password update API flow
-  
+- Created 'forgotPassword.html'.
+- Implemented the "ForgotPassword.html" with the Professional UI which i have inspired by the Instagram Clone.
 
 ## TECH STACK:
 -HTML
@@ -41,20 +42,20 @@ AuthForge is a backend authentication project built using Node.js and Express.js
  -User Registration
  -Secure Password Hashing
  -User Login Authentication
- ## Latest Update (Day 2)
+ ## Latest Update (Day 1)
   - Created a professional dashboard page.
   - Redirects users to the dashboard after successful login.
   - Displays the logged-in users's username dynamically.
   - Stores the logged-in username using Local Storage.
   - Added Logout functionality.
-## Day 3:
+## Day 2:
 - implemented the profile page for displaying user details
 - implemented localStorage to store and retrieve user information
 - Connected signup data with profile display
 - Added dashboard and profile UI improvements
 - Debugged frontend and backend authentication flow
 
-## Day 4:
+## Day 3:
 -Implement Edit Profile functionality
 -Added username-based profile update flow
 -Passed username from profile page to edit profile page usin URL parameters
@@ -63,7 +64,7 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Connected frontend profile update form with backend API
 -Debugged and fixed profile update flow between frontend and backend
 
-## Day 5:
+## Day 4:
 -Implemented secure Change password functionality
 -Added current password verification before allowing password changes
 -Used bcrypt.compare() to verify the existing hashed password
@@ -74,6 +75,14 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Connected change password frontend from with backend API
 -Debugged and fixed duplicate PUT route issue in Express.js
 -Verified that users can login successfully using the updated password.
+## Day 5:
+-implemented the forgotPassword.html.
+-Designed a clean and responsive Forgot Password page inspired by the Instagram forgot Password Clone.
+-Added a professional UI using the HTML and CSS.
+-Added an Input field that accepts username , email and phone number.
+-Added a "Continue" button to begin the account recovery process.
+- Added a "Can't reset your password?" help link.
+- Linked the Forgot Password page with its CSS and JavaScript files.
 
 
  ## Upcoming Features:
