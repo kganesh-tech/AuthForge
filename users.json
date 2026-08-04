@@ -229,5 +229,11 @@
     "username": "pandu",
     "email": "pandu@123",
     "password": "$2b$10$1Iz5qZk59PZXNeZNOnO0ieyNg5zC8oACfP8tLuOwRCCHDkvN9MOwi"
+  },
+  {
+    "fullName": "Katigari",
+    "username": "divya",
+    "email": "divya123@gmail.com",
+    "password": "$2b$10$GXiG/X/MGW8OaMJTYP6Vaejfh4smsud65ys9Kdf3lVcFUl8it8Avq"
   }
 ]

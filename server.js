@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
+const { generateResetToken } = require("./utils/crypto");
 
 const app = express();
 
@@ -208,6 +209,40 @@ app.put("/users/password/:username" , async(req,res) => {
             
         
         });
+    });
+
+    app.post("/forgot-password" , (req, res) => {
+        const info = req.body.info;
+        console.log(info);
+
+        
+
+    fs.readFile("users.json" , "utf-8" , (err,data) => {
+        if(err) {
+            return res.status(400).json({
+                message : "unable to read the file"
+            });
+        }
+        const users = JSON.parse(data);
+        const user = users.find(user => user.username === info || user.email === info || user.phonenumber === info);
+
+        if(!user) {
+            console.log("user not found:" );
+            return res.status(400).json({
+                message : "user not found"
+            });
+        } 
+          console.log("User found:" , user.email);
+          const {generateToken, resetTokenExpiry } = generateResetToken();
+
+          console.log("Reset token:", generateToken);
+          console.log("Expires At:" , resetTokenExpiry);
+            return res.status(200).json({
+                message : "user found"
+            });
+           
+        
+    });
     });
 
 
