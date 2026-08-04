@@ -25,7 +25,7 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - Separate password update API flow
 - Created 'forgotPassword.html'.
 - Implemented the "ForgotPassword.html" with the Professional UI which i have inspired by the Instagram Clone.
-
+- Implemented the Forgot Password verification flow.When a valid username, email, or phone number is entered, the system generates a secure reset token and expiry time using Node.js crypto and logs them for the verified user.
 ## TECH STACK:
 -HTML
 -CSS
@@ -83,6 +83,15 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Added a "Continue" button to begin the account recovery process.
 - Added a "Can't reset your password?" help link.
 - Linked the Forgot Password page with its CSS and JavaScript files.
+
+## Day 6:
+-Implemented user Verification using username, email or Phone number.
+-Connected the frontend and backend for the Forgot Password Flow.
+-Validated user existence from users.json.
+-Created a resusable utils/crypto.js utility module.
+-Generated a secure password reset token using Node.js crypto.
+-Generated a 15-minute reset token expiry for password recovery.
+-Successfully logged the verified user's email,reset token, and expiry time for testing.
 
 
  ## Upcoming Features:
