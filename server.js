@@ -3,6 +3,7 @@ const fs = require("fs");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const { generateResetToken } = require("./utils/crypto");
+const { sendEmail } = require("./utils/nodemailer");
 
 const app = express();
 
@@ -211,13 +212,13 @@ app.put("/users/password/:username" , async(req,res) => {
         });
     });
 
-    app.post("/forgot-password" , (req, res) => {
+    app.post("/forgot-password" , async(req, res) => {
         const info = req.body.info;
         console.log(info);
 
         
 
-    fs.readFile("users.json" , "utf-8" , (err,data) => {
+    fs.readFile("users.json" , "utf-8" , async(err,data) => {
         if(err) {
             return res.status(400).json({
                 message : "unable to read the file"
@@ -234,9 +235,22 @@ app.put("/users/password/:username" , async(req,res) => {
         } 
           console.log("User found:" , user.email);
           const {generateToken, resetTokenExpiry } = generateResetToken();
+          
 
           console.log("Reset token:", generateToken);
           console.log("Expires At:" , resetTokenExpiry);
+
+          const resetLink =
+          `http://localhost:3000/ResetPassword.html?generateToken=${generateToken}`;
+          
+          await sendEmail(
+            user.email,
+            "AuthForge Reset Password",
+            `Click the link below to reset your password: ${resetLink}`
+          );
+          return res.status(200).json({
+            message: "Reset email sent successfully"
+          });
             return res.status(200).json({
                 message : "user found"
             });
