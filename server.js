@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const fs = require("fs");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
@@ -9,6 +10,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.post("/users" , async (req, res) => {
     const fullName = req.body.fullName;
@@ -132,6 +135,9 @@ app.put("/users/profile/:username" , (req,res) => {
                     message : "User not found"
                 });
             }
+            return res.status(200).json({
+                message : "user found"
+            });
             user.fullName = newFullName;
             user.username = newusername;
             user.email = newEmail;
@@ -239,7 +245,10 @@ app.put("/users/password/:username" , async(req,res) => {
 
           console.log("Reset token:", generateToken);
           console.log("Expires At:" , resetTokenExpiry);
-
+            
+          user.generateToken = generateToken;
+          user.resetTokenExpiry = resetTokenExpiry;
+        fs.writeFileSync("users.json" , JSON.stringify(users , null , 2));
           const resetLink =
           `http://localhost:3000/ResetPassword.html?generateToken=${generateToken}`;
           
@@ -254,11 +263,64 @@ app.put("/users/password/:username" , async(req,res) => {
             return res.status(200).json({
                 message : "user found"
             });
-           
+           });
+});
+
+app.post("/resetPassword" , async(req,res) => {
+    const generateToken = req.body.generateToken;
+    console.log("Token received:" , generateToken);
+    const newPassword = req.body.newPassword;
+    const confirmPassword = req.body.confirmPassword;
+
+    console.log("NEW PASSWORD:", newPassword);
+    console.log("CONFIRM PASSWORD:" , confirmPassword);
+
+    if(newPassword != confirmPassword) {
+        return res.status(400).json({
+            message : "passwords don't match"
+        })
+    }
+
+    fs.readFile("users.json" , "utf-8" , async(err , data) => {
+        if(err){
+            return res.status(400).json({
+                message : "unable to read the file"
+            })
+        }
+
+        const users = JSON.parse(data);
+        const user = users.find(user => user.generateToken === generateToken);
+        console.log("Found user:", user);
+        if(!user) {
+            return res.status(400).json({
+                message : "Invalid Token"
+
+            })
+        }
+        const resetTokenExpiry = user.resetTokenExpiry;
+        if(Date.now() > resetTokenExpiry){
+            return res.status(400).json({
+                message : "Token is expired"
+            })
+        }
         
-    });
+        const hashedPassword = await bcrypt.hash(newPassword , 10);
+        console.log("Password HASH CREATED");
+         user.password = hashedPassword;
+         user.generateToken = null;
+         user.resetTokenExpiry = null;
+
+         console.log("USER BEFORE WRITE");
+
+         fs.writeFileSync("users.json" , JSON.stringify(users, null , 2));
+         return res.status(200).json({
+            message : "password reset successfully"
+         });
     });
 
+
+
+});
 
 app.listen(3000, () => {
     console.log("server is running on the 3000");
