@@ -123,6 +123,12 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Users can noe receive a password reset email, verify the secure token, reset their password, and log in successfully with the new password.
 -Thoroughly tested the complete password recovery workflow and fixed all issues.
 
+## DAY-10:
+-I have found some bugs in my project which might face a issues in the future like upcoming versions.
+-so i am on  a way of solving them.
+-working hard on the bugs which can be done within plenty of days.
+
+
 
  ## Upcoming Features:
  -Duplicate Username & Email Validation
