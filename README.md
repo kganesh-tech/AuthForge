@@ -127,7 +127,8 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -I have found some bugs in my project which might face a issues in the future like upcoming versions.
 -so i am on  a way of solving them.
 -working hard on the bugs which can be done within plenty of days.
-
+## DAY-11:
+-worked on the bugs and have debugged some bugs and still there are some bugs which to be solved
 
 
  ## Upcoming Features:
