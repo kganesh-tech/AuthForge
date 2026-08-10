@@ -129,7 +129,15 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -working hard on the bugs which can be done within plenty of days.
 ## DAY-11:
 -worked on the bugs and have debugged some bugs and still there are some bugs which to be solved
-
+## DAY-12:
+-Continued debugging the remaining issues in the AuthForge authentication system
+-Investigated authentication flow and redirection-related bugs.
+-Verified profile updated and password-change functionality
+-Tested the forgot password - reset Password flow
+-Checked that updated user data is correctlly persisted in users.json
+-Identified and worked through remaining edge cases and runtime errors.
+-Improved the overall stability and realiability of the authentication system.
+-Continued testing the application after each fix to ensure existing functionality was not broken.
 
  ## Upcoming Features:
  -Duplicate Username & Email Validation
