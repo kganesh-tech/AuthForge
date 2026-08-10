@@ -31,6 +31,9 @@ fetch("http://localhost:3000/resetPassword" , {
   .then(res => res.json())
   .then(data => {
     alert(data.message);
+    if (res.ok) {
+      window.location.href="login.html;"
+    }
   })
 
   .catch(err => {

@@ -44,7 +44,10 @@ form.addEventListener("submit", function(event) {
     .then(data => {
         
         alert(data.message);
-        window.location.href= "login.html";
+        if ( data.message == "password reset successfully" ) {
+             window.location.href= "login.html";
+        }
+       
     })
 
     .catch(err => {

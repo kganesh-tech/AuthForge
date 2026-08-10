@@ -17,28 +17,39 @@
 
         <form id="signupForm">
 
-            <input type="text" id="fullName" placeholder="Full Name" required>
+    <input type="text" id="fullName" placeholder="Full Name" required>
 
-            <input type="text" id="username" placeholder="username" required>
+    <input type="text" id="username" placeholder="username" required>
 
-            <input type="email" id="email" placeholder="Email Address" required>
+    <input type="email" id="email" placeholder="Email Address" required>
 
-            <input type="password" id="password"placeholder="Password" required>
+    <input type="password" id="password" placeholder="Password" required>
 
-            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
-            <button type="submit">Create Account</button>
+    <button type="submit">Create Account</button>
 
-        </form>
+</form>
 
+
+<div id="successMessage" class="success-message" >
+
+    <div class="success-icon">✓</div>
+
+    <h2>Account Created Successfully</h2>
+
+    <p>Your AuthForge account has been registered securely.</p>
+
+    <button type="button" onclick="window.location.href='login.html'">
+        Continue to Sign In
+    </button>
+
+</div>
         <p class="login-text">
             Already have an account?
             <a href="login.html">Sign In</a>
         </p>
-        <button onclick = "window.location.href='login.html'"> 
-            Go Login 
-        </button>
-
+        
     </div>
 
 </div>

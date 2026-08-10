@@ -3,22 +3,14 @@
     "fullName": "Katigari",
     "username": "Ganesh",
     "email": "k.ganesh6286@gmail.com",
-    "password": "$2b$10$8RpN2TZ.tvjjZx7oO1r4UOkwG48il96.k8OE39Sob6UccqkGEiNfi",
+    "password": "$2b$10$4h2x0lsBoHdjBMcF6LkbyuCLR4.Q/FgCuNjW/JJw9XfX8tsw9wKsu",
     "generateToken": null,
     "resetTokenExpiry": null
   },
   {
     "fullName": "Katigari",
-    "username": "Pandu",
-    "email": "pandu@123",
-    "password": "$2b$10$X6Ig67Y2l7wUkS9/DE5oS.P10Ze6TrI/hzYhsuK2JCUxrz9GIGmQW"
-  },
-  {
-    "fullName": "Katigari",
-    "username": "vishwa",
-    "email": "authforge17@gmail.com",
-    "password": "$2b$10$KneyJQuX7ugVLM6afE8WiePi/e9ShL1botUjUnCvCmMWyU0FJ3ODW",
-    "generateToken": null,
-    "resetTokenExpiry": null
+    "username": "bunny",
+    "email": "k.ganesh6286@gmail.com",
+    "password": "$2b$10$sepL1VO7T3ngij1K1W8hv.anKuKGKqAD57AoswYDhG8abnxiyXITa"
   }
 ]

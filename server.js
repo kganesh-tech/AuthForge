@@ -135,9 +135,7 @@ app.put("/users/profile/:username" , (req,res) => {
                     message : "User not found"
                 });
             }
-            return res.status(200).json({
-                message : "user found"
-            });
+            
             user.fullName = newFullName;
             user.username = newusername;
             user.email = newEmail;
@@ -145,11 +143,12 @@ app.put("/users/profile/:username" , (req,res) => {
             fs.writeFile("users.json" , JSON.stringify(users , null, 2) , (err) => {
                 if(err) {
                     return res.status(400).json({
-                        message : "unable to read file"
+                        message : "unable to write file"
                     });
 
                     
                 }
+                console.log("PROFILE UPDATED SUCCESSFULLY");
                 
 
                 return res.status(200).json({
