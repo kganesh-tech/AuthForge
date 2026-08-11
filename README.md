@@ -138,6 +138,14 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Identified and worked through remaining edge cases and runtime errors.
 -Improved the overall stability and realiability of the authentication system.
 -Continued testing the application after each fix to ensure existing functionality was not broken.
+## DAY-13:
+- Implemented JWT Token generation during users login
+- Stored the generated JWT securely in LocalStorage on the client side
+- Added the JWT to protected API requests using the Bearer Token format
+- Implemented JWT Authentication middleware on the backend
+- Protected the /users route using JWT verification
+- Verified the token before allowing access to protected resources.
+- Tested the complete verification flow from login to accessing protected routes.
 
  ## Upcoming Features:
  -Duplicate Username & Email Validation
