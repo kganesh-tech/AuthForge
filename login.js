@@ -28,14 +28,23 @@ document.getElementById("loginForm");
  })
  .then(res => res.json())
  .then(data => {
+
+    console.log("LOGIN RESPONSE:", data);
+
     alert(data.message);
+
     if(data.message === "Login successful") {
-    
+
     localStorage.setItem("username", username);
-   
-    window.location.href="dashboard.html";
-    }
- })
+    localStorage.setItem("token", data.token);
+
+    console.log("BEFORE REDIRECT:");
+    console.log("username:", localStorage.getItem("username"));
+    console.log("token:", localStorage.getItem("token"));
+
+    window.location.href = "dashboard.html";
+}
+})
  .catch(err => {
     console.log(err);
  });

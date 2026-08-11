@@ -5,6 +5,9 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const { generateResetToken } = require("./utils/crypto");
 const { sendEmail } = require("./utils/nodemailer");
+const jwt = require("jsonwebtoken");
+const verifyToken = require("./middleware/authMiddleware");
+
 
 const app = express();
 
@@ -93,14 +96,21 @@ app.post("/login", async(req,res) => {
 
             
         }
+        const token = jwt.sign({
+            username : user.username },
+            process.env.JWT_SECRET,
+            { expiresIn: "1h"}
+        );
+        console.log("JWT TOKEN:" , token);
         res.json({
-            message : "Login successful"
+            message : "Login successful",
+            token:token
         });
 ;
     });
 });
 
-app.get("/users" , (req,res) => {
+app.get("/users" ,verifyToken, (req,res) => {
     fs.readFile("users.json" , "utf-8" , (err,data) => {
         if(err) {
             return res.status(400).json({

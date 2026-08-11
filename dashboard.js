@@ -1,3 +1,7 @@
+console.log("DASHBOARD LOADED");
+console.log("username:", localStorage.getItem("username"));
+console.log("token:", localStorage.getItem("token"));
+
 const username =
 localStorage.getItem("username");
 
@@ -39,3 +43,14 @@ const changePasswordBtn =
 
      window.location.href = `changePassword.html?username=${username}`;
  });
+ const token = localStorage.getItem("token");
+
+fetch("http://localhost:3000/users", {
+    headers: {
+        Authorization: `Bearer ${token}`
+    }
+})
+.then(res => res.json())
+.then(data => {
+    console.log("SERVER RESPONSE:", data);
+});
