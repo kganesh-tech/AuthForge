@@ -29,6 +29,7 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - Implemented the Forgot Password verification flow by generating a secure reset token using Node.js crypto and sending a password reset email containing the generated reset token to the users verified email address using the Nodemailer.
 - Implemented Reset password frontend interface.
 - completed the end-to-end Forgot Password and Reset Password workflow.Users receive a secure reset link via email,verify the reset token, and successfully update their password through the /reset-password API.
+- Implemented the user dashboard UI with adding some faetures in the sidebar and the nav bar and also added the create new project feature and profile integration.
 ## TECH STACK:
 -HTML
 -CSS
@@ -105,14 +106,14 @@ AuthForge is a backend authentication project built using Node.js and Express.js
      "resetPassword.css"
     for the upcoming password reset functionality with the verified token which is generated.
 
-## Day 8:
+## Day 8: ResetPassword.html
 -Designed and implemented resetPassword.html
 -Created a clean and responsive Reset Password UI.
 -Added new Password input fields.
 -Prepare the frontend for secure password reset using token-based authtntication
 -Organized the project structure for the upcoming password update flow.
 
-## Day 9:
+## Day 9: Reset-Password(email Flow)
 -Successfully completed the complete Reset Password workflow.
 -Added a secure `/reset-password` API to update user passwords.
 -Implemented reset token verification before allowing password update.
@@ -138,7 +139,7 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Identified and worked through remaining edge cases and runtime errors.
 -Improved the overall stability and realiability of the authentication system.
 -Continued testing the application after each fix to ensure existing functionality was not broken.
-## DAY-13:
+## DAY-13 - JWT Authentication
 - Implemented JWT Token generation during users login
 - Stored the generated JWT securely in LocalStorage on the client side
 - Added the JWT to protected API requests using the Bearer Token format
@@ -146,6 +147,19 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - Protected the /users route using JWT verification
 - Verified the token before allowing access to protected resources.
 - Tested the complete verification flow from login to accessing protected routes.
+
+
+### Day 14 – User Dashboard
+
+- Implemented the User Dashboard interface.
+- Added user profile information to the dashboard.
+- Integrated the logged-in user's details dynamically.
+- Added notification and profile sections to the dashboard header.
+- Improved the dashboard layout and spacing for a cleaner UI.
+- Connected the dashboard with the existing authentication flow.
+- Verified that authenticated user data is displayed correctly.
+
+
 
  ## Upcoming Features:
  -Duplicate Username & Email Validation
