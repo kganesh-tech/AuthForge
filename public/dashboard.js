@@ -53,3 +53,20 @@ fetch("http://localhost:3000/users", {
 .then(data => {
     console.log("SERVER RESPONSE:", data);
 });
+
+const createProjectBtn =
+document.querySelector("#createProjectBtn");
+
+createProjectBtn.addEventListener("click" , function(event) {
+    event.preventDefault();
+    window.location.href = "createProject.html";
+})
+
+const createProjectBtnEmpty =
+document.querySelector("#createProjectBtnEmpty");
+
+createProjectBtnEmpty.addEventListener("click" , function(event)  {
+     event.preventDefault();
+
+    window.location.href = "createProject.html";
+});
