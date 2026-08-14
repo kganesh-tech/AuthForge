@@ -30,6 +30,7 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - Implemented Reset password frontend interface.
 - completed the end-to-end Forgot Password and Reset Password workflow.Users receive a secure reset link via email,verify the reset token, and successfully update their password through the /reset-password API.
 - Implemented the user dashboard UI with adding some faetures in the sidebar and the nav bar and also added the create new project feature and profile integration.
+- Implemented the createProject.html with the frontend UI which can be redirected when the user wants to create a project.
 ## TECH STACK:
 -HTML
 -CSS
@@ -149,7 +150,7 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - Tested the complete verification flow from login to accessing protected routes.
 
 
-### Day 14 – User Dashboard
+### Day-14 – User Dashboard
 
 - Implemented the User Dashboard interface.
 - Added user profile information to the dashboard.
@@ -158,6 +159,14 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 - Improved the dashboard layout and spacing for a cleaner UI.
 - Connected the dashboard with the existing authentication flow.
 - Verified that authenticated user data is displayed correctly.
+
+## DAY-15 :
+- Implemented the createProject.html interface.
+- Added project name field
+- Added project description field
+- Added the create Project button
+- Designed a clean and professional white-background interface
+- Added responsive styling for the project creation form 
 
 
 
