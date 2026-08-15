@@ -7,6 +7,7 @@ const { generateResetToken } = require("./utils/crypto");
 const { sendEmail } = require("./utils/nodemailer");
 const jwt = require("jsonwebtoken");
 const verifyToken = require("./middleware/authMiddleware");
+const crypto = require("crypto");
 
 
 const app = express();
@@ -329,6 +330,37 @@ app.post("/resetPassword" , async(req,res) => {
 
 
 
+});
+
+app.post("/projects" , (req,res) => {
+    const projectId = crypto.randomBytes(8).toString("hex");
+    const webName = req.body.webName;
+    const Description = req.body.Description;
+
+fs.readFile("projects.json" , "utf8" , (err,data) => {
+    if(err) {
+        return res.status(500).json({
+            message : "error in reading file"
+        });
+    }
+    const projects = JSON.parse(data);
+    projects.push ({
+        projectId : projectId,
+        webName: webName,
+        Description: Description
+    });
+
+fs.writeFile("projects.json" , JSON.stringify(projects , null , 2) , (err) => {
+    if(err) {
+        return res.status(500).json({
+            message : "unable to write the file"
+        });
+    }
+    res.status(201).json({
+        message : "project have saved successfully"
+    });
+});
+});
 });
 
 app.listen(3000, () => {
