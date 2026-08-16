@@ -68,5 +68,51 @@ document.querySelector("#createProjectBtnEmpty");
 createProjectBtnEmpty.addEventListener("click" , function(event)  {
      event.preventDefault();
 
-    window.location.href = "createProject.html";
+     localStorage.setItem( username);
+
+    window.location.href = `createProject.html?username=${username}`;
+});
+
+const projectsGrid =
+document.getElementById("projectsGrid");
+
+fetch("http://localhost:3000/projects" , {
+  method : "GET",
+
+})
+
+.then(res => res.json())
+.then(data => {
+
+    data.forEach(project => {
+
+        const card = document.createElement("div");
+        card.className = "project-card";
+
+        const projectName = document.createElement("p");
+        projectName.textContent = "Project Name: " + project.webName;
+
+        const projectmatter = document.createElement("p");
+        projectmatter.textContent =
+            "Project Description: " + project.Description;
+
+        card.appendChild(projectName);
+        card.appendChild(projectmatter);
+
+        projectsGrid.appendChild(card);
+
+    const openProjectBtn =
+    document.createElement("button");
+
+    openProjectBtn.textContent = "openProject"
+    openProjectBtn.className = "open-project-btn";
+
+    card.appendChild(openProjectBtn);
+
+    openProjectBtn.addEventListener("click", () => {
+             window.location.href = "projects.html";
+    })
+
+    });
+
 });

@@ -1,3 +1,8 @@
+
+
+const username =
+localStorage.getItem("username");
+console.log(username);
 const form =
 document.getElementById("createProjectform");
 
@@ -9,6 +14,14 @@ form.addEventListener("submit" , function(event) {
     const Description =
     document.getElementById("Description").value;
 
+    console.log("USERNAME BEFORE FETCH:", username);
+
+    console.log("DATA BEING SENT:" , {
+        username : username,
+        webName : webName,
+        Description : Description
+    });
+
   fetch("http://localhost:3000/projects" , {
       method : "POST",
       headers : {
@@ -16,8 +29,9 @@ form.addEventListener("submit" , function(event) {
       },
 
       body : JSON.stringify({
-        webName ,
-        Description
+        username : username,
+        webName : webName ,
+        Description : Description
       })
   })
 

@@ -333,9 +333,18 @@ app.post("/resetPassword" , async(req,res) => {
 });
 
 app.post("/projects" , (req,res) => {
-    const projectId = crypto.randomBytes(8).toString("hex");
+    const userId = "usr_" + crypto.randomBytes(8).toString("hex");
+    const projectId = "prj_" + crypto.randomBytes(8).toString("hex");
+    const username = req.body.username;
     const webName = req.body.webName;
     const Description = req.body.Description;
+     console.log("DATA RECEIVED:" , {
+        username,
+        userId,
+        projectId,
+        webName,
+        Description
+    });
 
 fs.readFile("projects.json" , "utf8" , (err,data) => {
     if(err) {
@@ -345,6 +354,8 @@ fs.readFile("projects.json" , "utf8" , (err,data) => {
     }
     const projects = JSON.parse(data);
     projects.push ({
+        username : username,
+        userId : userId,
         projectId : projectId,
         webName: webName,
         Description: Description
@@ -357,10 +368,24 @@ fs.writeFile("projects.json" , JSON.stringify(projects , null , 2) , (err) => {
         });
     }
     res.status(201).json({
-        message : "project have saved successfully"
+        message : "project created successfully"
     });
 });
 });
+});
+
+app.get("/projects" , (req,res) => {
+    fs.readFile("projects.json" , "utf8", (err,data) => {
+        if(err){
+            return res.status(400).json({
+                message : "error in reading the file"
+            })
+        }
+
+        const projects = JSON.parse(data);
+
+        res.json(projects);
+    });
 });
 
 app.listen(3000, () => {
