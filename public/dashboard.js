@@ -92,6 +92,8 @@ fetch("http://localhost:3000/projects" , {
         const projectName = document.createElement("p");
         projectName.textContent = "Project Name: " + project.webName;
 
+       
+
         const projectmatter = document.createElement("p");
         projectmatter.textContent =
             "Project Description: " + project.Description;
@@ -109,9 +111,17 @@ fetch("http://localhost:3000/projects" , {
 
     card.appendChild(openProjectBtn);
 
-    openProjectBtn.addEventListener("click", () => {
-             window.location.href = "projects.html";
-    })
+   openProjectBtn.addEventListener("click", () => {
+    
+
+    localStorage.setItem("projectName", project.webName);
+    localStorage.setItem("projectmatter" , project.Description);
+    localStorage.setItem("projectId:" , project.projectId);
+
+    
+
+    window.location.href = "projects.html";
+});
 
     });
 

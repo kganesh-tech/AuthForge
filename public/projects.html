@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthForge</title>
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">🔒</div>
+                <span>AuthForge</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span>⌂</span>
+                    <span>Overview</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>🔑</span>
+                    <span>API Keys</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>▥</span>
+                    <span>Requests</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>▢</span>
+                    <span>Documentation</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>⚙</span>
+                    <span>Settings</span>
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>♧</span>
+                    <span>Team</span>
+                </a>
+            </nav>
+
+            <div class="profile">
+                <div class="profile-icon">G</div>
+
+                <div class="profile-info">
+                    <h4>Ganesh</h4>
+                    <p>ganesh@example.com</p>
+                </div>
+
+                <span class="profile-arrow">⌄</span>
+            </div>
+
+        </aside>
+
+        <div class="main">
+
+            <header class="topbar">
+                <button class="dashboard-btn">
+                    ← &nbsp; Dashboard
+                </button>
+
+                <div class="topbar-right">
+                    <div class="notification">
+                        ♧
+                        <span>3</span>
+                    </div>
+
+                    <div class="user-avatar">
+                        G
+                    </div>
+                </div>
+            </header>
+
+            <main class="content">
+
+                <section class="welcome">
+                    <p class="eyebrow">PROJECT OVERVIEW</p>
+
+                    <h1>
+                        Welcome to <span id="projectName"></span>
+                    </h1>
+
+                    <p id ="projectDescription"></p>
+                    
+                </section>
+
+                <section class="project-info">
+
+                    <div class="info-card">
+                        <div class="info-icon blue">□</div>
+
+                        <div>
+                            <p id ="ProjectName" ></p>
+                            <h3 id ="projectNameCard"></h3>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon green">●</div>
+
+                        <div>
+                            <p>Project Status</p>
+                            <h3 class="active-status">● Active</h3>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon purple">◇</div>
+
+                        <div>
+                            <p id = "Project ID"></p>
+                            <h3 id="projectId"></h3>
+                        </div>
+
+                        <button class="copy-btn">□</button>
+                    </div>
+
+                </section>
+
+                <section class="features">
+
+                    <div class="feature-card">
+                        <div class="feature-icon blue">🔑</div>
+
+                        <div class="feature-content">
+                            <h2>API Keys</h2>
+
+                            <p>
+                                Create and manage API keys
+                                for your project.
+                            </p>
+
+                            <button>Manage API Keys</button>
+                        </div>
+
+                        <span class="arrow">→</span>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon green">⌁</div>
+
+                        <div class="feature-content">
+                            <h2>Requests</h2>
+
+                            <p>
+                                Monitor and analyze API
+                                requests made by your apps.
+                            </p>
+
+                            <button>View Requests</button>
+                        </div>
+
+                        <span class="arrow">→</span>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon orange">▢</div>
+
+                        <div class="feature-content">
+                            <h2>Documentation</h2>
+
+                            <p>
+                                Learn how to integrate
+                                AuthForge in your applications.
+                            </p>
+
+                            <button>Open Documentation</button>
+                        </div>
+
+                        <span class="arrow">→</span>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon purple">⚙</div>
+
+                        <div class="feature-content">
+                            <h2>Settings</h2>
+
+                            <p>
+                                Manage your project configuration
+                                and preferences.
+                            </p>
+
+                            <button>Project Settings</button>
+                        </div>
+
+                        <span class="arrow">→</span>
+                    </div>
+
+                </section>
+
+            </main>
+        </div>
+
+    </div>
+<script src ="projects.js"></script>
+</body>
+</html>
