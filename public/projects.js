@@ -1,3 +1,5 @@
+
+
 console.log("project to be loaded");
 const projectName =
 localStorage.getItem("projectName");
@@ -13,3 +15,21 @@ document.getElementById("projectName").textContent = projectName;
 document.getElementById("projectDescription").textContent = projectmatter;
 document.getElementById("projectNameCard").textContent = projectName;
 document.getElementById("projectId").textContent = projectId;
+
+const dashboardBtn =
+document.getElementById("dashboardBtn");
+
+
+dashboardBtn.addEventListener("click" , function(event)  {
+      event.preventDefault();
+    window.location.href = "dashboard.html";
+});
+
+const apikeysBtn =
+document.getElementById("apikeysBtn");
+
+apikeysBtn.addEventListener("click" , function(event) {
+  event.preventDefault();
+   localStorage.setItem("webName" , projectId);
+  window.location.href = "api-keys.html";
+});

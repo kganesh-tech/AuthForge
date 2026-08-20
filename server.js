@@ -385,8 +385,41 @@ app.get("/projects" , (req,res) => {
         const projects = JSON.parse(data);
 
         res.json(projects);
+        
     });
 });
+
+app.get("/api-keys/:projectId" , (req,res) => {
+    const projectId = req.params.projectId;
+
+fs.readFile("projects.json" , "utf-8" , (err,data) => {
+    if(err) {
+        return res.status(400).json({
+            message : "error in reading file"
+        })
+    }
+    
+    const projects = JSON.parse(data);
+    const project = projects.find(project => project.projectId === projectId);
+    if(!project) {
+        return res.status(400).json({
+            message : "project not found"
+        })
+    }
+       return res.status(200).json({
+        message : "project found",
+        project : project
+
+        
+       });
+       
+    });
+    
+
+    
+    
+});
+
 
 app.listen(3000, () => {
     console.log("server is running on the 3000");

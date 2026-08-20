@@ -35,10 +35,15 @@ form.addEventListener("submit" , function(event) {
       })
   })
 
-  .then(res => res.json())
+  .then(res => {
+    if(res.ok) {
+      return res.json();
+    }
+    throw new Error("Project creation failed");
+  })
   .then(data => {
-    
-        alert(data.message);
+    alert(data.message);
+        window.location.href = "dashboard.html";
     
   })
   .catch(error => {

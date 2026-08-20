@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Keys | AuthForge</title>
+    <link rel="stylesheet" href="api-keys.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            Auth<span>Forge</span>
+        </div>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="projects.html">Projects</a>
+            <a href="api-keys.html" class="active">API Keys</a>
+            <a href="documentation.html">Documentation</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile">
+                <div class="profile-avatar">G</div>
+
+                <div>
+                    <h4>Ganesh</h4>
+                    <p>Developer</p>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h1>API Keys</h1>
+                <p>Manage API keys for your project.</p>
+            </div>
+
+            <button class="generate-btn">
+                + Generate API Key
+            </button>
+
+        </header>
+
+
+        <section class="project-context">
+
+            <div>
+                <span class="context-label">PROJECT</span>
+                <h2 id ="projectName"></h2>
+            </div>
+
+            <div class="project-id">
+                <span class="context-label">PROJECT ID</span>
+                <p id = "projectId"></p>
+            </div>
+
+        </section>
+
+
+        <section class="security-card">
+
+            <div class="security-icon">
+                🔒
+            </div>
+
+            <div>
+                <h3>Keep your API keys secure</h3>
+                <p>
+                    API keys provide access to your project.
+                    Never share them publicly or commit them to source control.
+                </p>
+            </div>
+
+        </section>
+
+
+        <section class="keys-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Your API Keys</h2>
+                    <p>Create and manage keys used to access your project.</p>
+                </div>
+
+                <span class="key-count">
+                    1 Key
+                </span>
+
+            </div>
+
+
+            <div class="key-card">
+
+                <div class="key-main">
+
+                    <div class="key-icon">
+                        🔑
+                    </div>
+
+                    <div class="key-details">
+
+                        <h3>Production API Key</h3>
+
+                        <div class="key-value">
+                            af_live_••••••••••••••••
+                        </div>
+
+                        <div class="key-meta">
+                            <span>Created Aug 20, 2026</span>
+                            <span class="status">
+                                <span class="status-dot"></span>
+                                Active
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="key-actions">
+
+                    <button class="copy-btn">
+                        Copy
+                    </button>
+
+                    <button class="revoke-btn">
+                        Revoke
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    🔐
+                </div>
+
+                <h3>Need another API key?</h3>
+
+                <p>
+                    Generate a separate key for development,
+                    production, or another environment.
+                </p>
+
+                <button class="secondary-generate-btn">
+                    + Generate API Key
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+  <script src ="api-keys.js"></script>
+</body>
+</html>

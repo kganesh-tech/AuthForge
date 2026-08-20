@@ -92,13 +92,15 @@ fetch("http://localhost:3000/projects" , {
         const projectName = document.createElement("p");
         projectName.textContent = "Project Name: " + project.webName;
 
-       
+        const projectId = document.createElement("p");
+        projectId.textContent = "project Id: " + project.projectId;
 
         const projectmatter = document.createElement("p");
         projectmatter.textContent =
             "Project Description: " + project.Description;
 
         card.appendChild(projectName);
+        card.appendChild(projectId);
         card.appendChild(projectmatter);
 
         projectsGrid.appendChild(card);
@@ -116,7 +118,8 @@ fetch("http://localhost:3000/projects" , {
 
     localStorage.setItem("projectName", project.webName);
     localStorage.setItem("projectmatter" , project.Description);
-    localStorage.setItem("projectId:" , project.projectId);
+    localStorage.setItem("projectId" , project.projectId);
+    
 
     
 
