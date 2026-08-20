@@ -199,7 +199,13 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Debugged and fixed isses related to missing or null project data.
 -Verified the complete flow from project creation to project display on the dashboard.
 
-
+## DAY-19 :
+-Created the API Keys page UI.
+-Added a professional project context section.
+-Built a backend GET route to retrieve project details.
+-Connected the frontend to the backend.
+-Dynamically displayed the current projects name and project ID.
+-Debugged the API response structure and learned how nested JSON data is accessed.
 
 
  ## Upcoming Features:
