@@ -206,6 +206,12 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Connected the frontend to the backend.
 -Dynamically displayed the current projects name and project ID.
 -Debugged the API response structure and learned how nested JSON data is accessed.
+## DAY-20:
+-Create dedicated api-key-generated.html.
+-Redirect to the result page after successful generation
+-Display the original API key once.
+-the Original API key is stored in the database in the form of the hashed.
+-After the successful storage of the details the backend sends the res message of the "api key generated successfully".
 
 
  ## Upcoming Features:
