@@ -419,7 +419,62 @@ fs.readFile("projects.json" , "utf-8" , (err,data) => {
     
     
 });
+app.post("/generate-api-keys/:projectId" , async(req,res) => {
+    const projectId = req.params.projectId;
+    const keyName = req.body.keyName;
+    const environment = req.body.environment
 
+fs.readFile("projects.json" , "utf-8" , async(err,data) => {
+    if(err) {
+        return res.status(400).json({
+            message : "error in reading file"
+        });
+    }
+    const projects = JSON.parse(data);
+
+    const project = projects.find(project => project.projectId === projectId);
+
+    if(!project) {
+        return res.status(400).json({
+            message : "project not found"
+        })
+    }
+
+    const apiKey = "af_live_" + crypto.randomBytes(32).toString("hex");
+
+    const hashedapiKey = await bcrypt.hash(apiKey , 10);
+    const newApiKey = {
+        keyId : "key_" + crypto.randomBytes(8).toString("hex"),
+        keyName : keyName,
+        environment : environment,
+        apiKey : hashedapiKey,
+        status : "active",
+        createdAt : new Date().toISOString()
+    };
+    
+     if(!project.apiKeys) {
+        project.apiKeys = [];
+     }
+
+     project.apiKeys.push(newApiKey);
+    
+    fs.writeFile("projects.json" , JSON.stringify(projects , null, 2) , (err) => {
+    if(err) {
+        return res.status(400).json({
+            message : "error in writing file"
+        });
+    }
+    return res.status(200).json({
+        message : "API KEY generated successfully",
+        apiKey : apiKey,
+        keyId : newApiKey.keyId,
+        keyName : keyName,
+        environment : environment
+    });
+     
+  });
+});
+});
 
 app.listen(3000, () => {
     console.log("server is running on the 3000");

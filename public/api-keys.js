@@ -23,3 +23,13 @@ const projectId =
  .catch(error => {
     console.log("Error:" , error);
  });
+
+ const generateapikeyBtn =
+  document.getElementById("generateapikeyBtn");
+
+  generateapikeyBtn.addEventListener("click" , function(event)  {
+    event.preventDefault();
+      localStorage.setItem("projectId" , projectId );
+    window.location.href = "generate-api-key.html";
+
+  })

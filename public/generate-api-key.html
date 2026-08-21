@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Generate API Key - AuthForge</title>
+
+    <link rel="stylesheet" href="generate-api-key.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- Back Button -->
+        <a href="dashboard.html" class="back-btn">
+            ← Back to Dashboard
+        </a>
+
+
+        <!-- Main Card -->
+        <div class="api-card">
+
+            <!-- Header -->
+            <div class="header">
+                <div class="key-icon">
+                    🔑
+                </div>
+
+                <h1>Generate API Key</h1>
+
+                <p>
+                    Create a secure API key to connect your application
+                    with AuthForge.
+                </p>
+            </div>
+
+
+            <!-- Form -->
+            <div class="form-section">
+
+                <!-- Key Name -->
+                <div class="input-group">
+                    <label for="keyName">Key Name</label>
+
+                    <input
+                        type="text"
+                        id="keyName"
+                        placeholder="e.g. Production API Key"
+                    >
+
+                    <small>
+                        Give your API key a name so you can identify it later.
+                    </small>
+                </div>
+
+
+                <!-- Environment -->
+                <div class="input-group">
+                    <label for="environment">Environment</label>
+
+                    <select id="environment">
+                        <option value="development">
+                            Development
+                        </option>
+
+                        <option value="production">
+                            Production
+                        </option>
+                    </select>
+                </div>
+
+
+                <!-- Generate Button -->
+                <button type="button" class="generate-btn" id="generateBtn">
+                    Generate API Key
+                </button>
+
+            </div>
+
+                <div class="api-modal" id="apiModal">
+
+    <div class="api-modal-content">
+
+        <div class="success-message">
+            ✓ API Key generated successfully
+        </div>
+
+        <label>Your API Key</label>
+
+        <div class="key-container">
+
+            <input
+                type="text"
+                id="apiKey"
+                readonly
+            >
+
+            <button
+                type="button"
+                class="copy-btn"
+                id="copyBtn"
+            >
+                Copy
+            </button>
+
+        </div>
+
+        <div class="warning-box">
+
+            <span class="warning-icon">⚠️</span>
+
+            <div>
+                <strong>Save this API key securely</strong>
+
+                <p>
+                    This is the only time your complete API key
+                    will be displayed.
+                </p>
+            </div>
+
+        </div>
+
+        <button
+            type="button"
+            class="done-btn"
+            id="doneBtn"
+        >
+            Done
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+ <script src ="generate-api-key.js"></script>
+</body>
+</html>
