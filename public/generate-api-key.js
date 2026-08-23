@@ -34,11 +34,25 @@ fetch(`http://localhost:3000/generate-api-keys/${projectId}` , {
         return res.json();
     })
     .then(data => {
-       alert(data.message);
-       
 
-        
-    })
+    console.log("FULL SERVER RESPONSE:", data);
+
+    console.log("API KEY FROM RESPONSE:", data.apiKey);
+
+    sessionStorage.setItem(
+        "generatedApiKey",
+        data.apiKey
+    );
+
+    console.log(
+        "API KEY IN SESSION STORAGE:",
+        sessionStorage.getItem("generatedApiKey")
+    );
+
+    window.location.href =
+        "api-key-generated.html";
+
+})
     .catch(error => {
         console.log("Error :" , error);
     });

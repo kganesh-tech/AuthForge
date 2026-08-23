@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>API Key Generated - AuthForge</title>
+
+    <link
+        rel="stylesheet"
+        href="api-key-generated.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="page-container">
+
+        <div class="result-card">
+
+            <!-- Success Icon -->
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <!-- Heading -->
+
+            <h1>
+                API Key generated successfully
+            </h1>
+
+
+            <p class="description">
+                Your API key has been generated successfully.
+                Make sure you save it somewhere secure.
+            </p>
+
+
+            <!-- API Key Section -->
+
+            <div class="key-section">
+
+                <label for="apiKey">
+                    Your API Key
+                </label>
+
+
+                <div class="key-container">
+
+                    <input
+                        type="text"
+                        id="apiKeyInput"
+                        readonly
+                    >
+
+
+                    <button
+                        type="button"
+                        id="copyBtn"
+                        class="copy-btn"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Warning -->
+
+            <div class="warning-box">
+
+                <div class="warning-icon">
+                    ⚠️
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Save this API key securely
+                    </strong>
+
+
+                    <p>
+                        This is the only time your complete
+                        API key will be displayed. Store it
+                        somewhere safe before leaving this page.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Copy Status -->
+
+            <p
+                id="copyMessage"
+                class="copy-message"
+            ></p>
+
+
+            <!-- Done Button -->
+
+            <button
+                type="button"
+                id="doneBtn"
+                class="done-btn"
+            >
+                Done
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="api-key-generated.js"></script>
+
+</body>
+
+</html>

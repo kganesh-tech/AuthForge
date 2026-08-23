@@ -442,7 +442,7 @@ fs.readFile("projects.json" , "utf-8" , async(err,data) => {
 
     const apiKey = "af_live_" + crypto.randomBytes(32).toString("hex");
 
-    const hashedapiKey = await bcrypt.hash(apiKey , 10);
+    const hashedapiKey = await bcrypt.hash(apiKey , 10)
     const newApiKey = {
         keyId : "key_" + crypto.randomBytes(8).toString("hex"),
         keyName : keyName,
@@ -464,6 +464,8 @@ fs.readFile("projects.json" , "utf-8" , async(err,data) => {
             message : "error in writing file"
         });
     }
+
+    console.log("ORIGINAL API KEY:" , apiKey);
     return res.status(200).json({
         message : "API KEY generated successfully",
         apiKey : apiKey,
