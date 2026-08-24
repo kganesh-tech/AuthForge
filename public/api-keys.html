@@ -6,6 +6,7 @@
     <title>API Keys | AuthForge</title>
     <link rel="stylesheet" href="api-keys.css">
 </head>
+
 <body>
 
     <aside class="sidebar">
@@ -45,27 +46,31 @@
                 <p>Manage API keys for your project.</p>
             </div>
 
-            <button class="generate-btn" id ="generateapikeyBtn">
+            <button class="generate-btn" id="generateapikeyBtn">
                 + Generate API Key
             </button>
 
         </header>
 
 
+        <!-- PROJECT INFORMATION -->
+
         <section class="project-context">
 
             <div>
                 <span class="context-label">PROJECT</span>
-                <h2 id ="projectName"></h2>
+                <h2 id="projectName"></h2>
             </div>
 
             <div class="project-id">
                 <span class="context-label">PROJECT ID</span>
-                <p id = "projectId"></p>
+                <p id="projectId"></p>
             </div>
 
         </section>
 
+
+        <!-- SECURITY MESSAGE -->
 
         <section class="security-card">
 
@@ -75,6 +80,7 @@
 
             <div>
                 <h3>Keep your API keys secure</h3>
+
                 <p>
                     API keys provide access to your project.
                     Never share them publicly or commit them to source control.
@@ -84,22 +90,28 @@
         </section>
 
 
+        <!-- API KEYS -->
+
         <section class="keys-section">
 
             <div class="section-header">
 
                 <div>
                     <h2>Your API Keys</h2>
-                    <p>Create and manage keys used to access your project.</p>
+
+                    <p>
+                        Create and manage keys used to access your project.
+                    </p>
                 </div>
 
-                <span class="key-count">
-                    1 Key
+                <span class="key-count" id="keyCount">
+                    0 Keys
                 </span>
 
             </div>
 
 
+            
             <div class="key-card">
 
                 <div class="key-main">
@@ -108,20 +120,37 @@
                         🔑
                     </div>
 
+
                     <div class="key-details">
 
-                        <h3>Production API Key</h3>
+                        
+                        <h3 id="keyName"></h3>
 
-                        <div class="key-value">
-                            af_live_••••••••••••••••
+
+                       
+                        <div class="key-value" id="apiKey">
+                            ••••••••••••••••••••
                         </div>
 
+
+                        
+
                         <div class="key-meta">
-                            <span>Created Aug 20, 2026</span>
-                            <span class="status">
-                                <span class="status-dot"></span>
-                                Active
+
+                            <span id="createdAt"></span>
+
+                            <span>
+                                <span id="environment"></span>
                             </span>
+
+                            <span class="status">
+
+                                <span class="status-dot"></span>
+
+                                <span id="keyStatus"></span>
+
+                            </span>
+
                         </div>
 
                     </div>
@@ -129,13 +158,15 @@
                 </div>
 
 
+              
+
                 <div class="key-actions">
 
-                    <button class="copy-btn">
+                    <button class="copy-btn" id="copyBtn">
                         Copy
                     </button>
 
-                    <button class="revoke-btn">
+                    <button class="revoke-btn" id="revokeBtn">
                         Revoke
                     </button>
 
@@ -143,6 +174,8 @@
 
             </div>
 
+
+           
 
             <div class="empty-state">
 
@@ -166,6 +199,9 @@
         </section>
 
     </main>
-  <script src ="api-keys.js"></script>
+
+
+    <script src="api-keys.js"></script>
+
 </body>
 </html>

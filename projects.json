@@ -764,6 +764,14 @@
         "apiKey": "$2b$10$HgkhSZeMjjfUmzKVLp0nve9oH5yhDfESbH7kbiXCsVfRNCoUhalGW",
         "status": "active",
         "createdAt": "2026-08-21T13:58:15.663Z"
+      },
+      {
+        "keyId": "key_ada4b2606513c20d",
+        "keyName": "WallNut development",
+        "environment": "development",
+        "apiKey": "$2b$10$G7c86H6PWwVro3vf7xIlJ.n4veBdU0zSTBLXaBkVvYqXSHjSwWbdK",
+        "status": "active",
+        "createdAt": "2026-08-24T16:37:10.354Z"
       }
     ]
   },
@@ -938,6 +946,14 @@
         "apiKey": "$2b$10$tev85RLDN5sar00/T/Lo2Oob1qkscCmKbSlJVLVAlS/sQCAg7sN8O",
         "status": "active",
         "createdAt": "2026-08-21T13:46:31.466Z"
+      },
+      {
+        "keyId": "key_160713bfda8d2a1b",
+        "keyName": "Mango development",
+        "environment": "development",
+        "apiKey": "$2b$10$9vfQvlO5Yz3sUAVHfnvIrOVQgt4nX1JZQ3Q0d5hK7.kad.jqhFkXy",
+        "status": "active",
+        "createdAt": "2026-08-24T16:46:10.276Z"
       }
     ]
   },
@@ -1109,6 +1125,14 @@
         "apiKey": "$2b$10$ATlZr8Uy.hW6HisDxkguiuaH/ob1jS3fA/DfUaDQ9egfBD.sACpyi",
         "status": "active",
         "createdAt": "2026-08-23T14:30:41.127Z"
+      },
+      {
+        "keyId": "key_5a2aa2fc47d65437",
+        "keyName": "bobby Development",
+        "environment": "development",
+        "apiKey": "$2b$10$EIfpay56N9iWdrh7gizQSuX/RRbVq3uFaAAob/fKQwSCotbf98RxG",
+        "status": "active",
+        "createdAt": "2026-08-24T16:47:07.557Z"
       }
     ]
   }

@@ -406,13 +406,13 @@ fs.readFile("projects.json" , "utf-8" , (err,data) => {
             message : "project not found"
         })
     }
-       return res.status(200).json({
+        console.log("PROJECT DATA:");
+        console.log(project);
+    return res.status(200).json({
         message : "project found",
         project : project
-
-        
-       });
-       
+    });
+      
     });
     
 
