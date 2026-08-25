@@ -236,6 +236,18 @@ AuthForge is a backend authentication project built using Node.js and Express.js
    CreatedAt
    Status
  -Understood the difference between backend project data and frontend data.projects.
+
+## DAY-23:
+-Created the users.html , users.css and users.js where i can see the data of the user created project database there in the users system .
+-Created the new project GRINT -signup.html
+                               -signup.css
+                               -signup.js
+- Built the basic signup UI
+- Connected the signup form to JavaScript
+- Added the AuthForge/teset-connection endpoint.
+- Successfully tested Grint - AuthForge.
+- Confirmed Grint receives the AuthForge response.
+- Confirmed the API-Key generation system already exists in AuthForge.
  
  ## Upcoming Features:
  -Duplicate Username & Email Validation
