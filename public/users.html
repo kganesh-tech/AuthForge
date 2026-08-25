@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users - AuthForge</title>
+    <link rel="stylesheet" href="users.css">
+</head>
+<body>
+
+    <main class="users-page">
+
+        <div class="page-header">
+            <div>
+                <h1>Users</h1>
+                <p>Manage users registered in your project.</p>
+            </div>
+
+            <button class="add-user-btn">+ Add User</button>
+        </div>
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div>
+                    <span>Total Users</span>
+                    <h2>0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✓</div>
+                <div>
+                    <span>Active Users</span>
+                    <h2>0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">●</div>
+                <div>
+                    <span>New Users</span>
+                    <h2>0</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="users-card">
+
+            <div class="users-toolbar">
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input type="text" placeholder="Search users...">
+                </div>
+
+                <select>
+                    <option>All users</option>
+                    <option>Active</option>
+                    <option>Inactive</option>
+                </select>
+
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td colspan="5">
+                                <div class="empty-state">
+                                    <div class="empty-icon">👥</div>
+                                    <h3>No users yet</h3>
+                                    <p>Users who sign up through your AuthForge API will appear here.</p>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

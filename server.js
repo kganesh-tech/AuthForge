@@ -478,6 +478,14 @@ fs.readFile("projects.json" , "utf-8" , async(err,data) => {
 });
 });
 
+app.post("/test-connection", (req, res) => {
+    console.log("🔥 Connection received from Grint");
+
+    res.status(200).json({
+        message: "Grint connected to AuthForge successfully"
+    });
+});
+
 app.listen(3000, () => {
     console.log("server is running on the 3000");
 });
