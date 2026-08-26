@@ -478,11 +478,24 @@ fs.readFile("projects.json" , "utf-8" , async(err,data) => {
 });
 });
 
-app.post("/test-connection", (req, res) => {
-    console.log("🔥 Connection received from Grint");
+app.post("/users/test-connection", (req, res) => {
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const users = {
+        username,
+        email,
+        password
+    };
+    console.log("Grint connected to AuthForge successfully");
+
+    console.log("Users:" , users);
+    
 
     res.status(200).json({
-        message: "Grint connected to AuthForge successfully"
+        message: "Grint connected to AuthForge successfully",
+        Project : users
     });
 });
 
