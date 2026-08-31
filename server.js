@@ -482,13 +482,16 @@ app.post("/users/test-connection", (req, res) => {
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
+    const API_KEY = req.headers["x-api-key"];
 
     const users = {
         username,
         email,
         password
     };
+    
     console.log("Grint connected to AuthForge successfully");
+    console.log("API key received from GRINT: " , API_KEY);
 
     console.log("Users:" , users);
     

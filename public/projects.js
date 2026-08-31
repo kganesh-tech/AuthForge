@@ -33,3 +33,15 @@ apikeysBtn.addEventListener("click" , function(event) {
    localStorage.setItem("webName" , projectId);
   window.location.href = "api-keys.html";
 });
+
+const usersBtn =
+document.getElementById(".users-btn");
+
+usersBtn.addEventListener("click" , function(event) {
+  event.preventDeafult();
+
+  localStorage.setItem("ProjectId" , projectId);
+  localStorage.setItem("webName" , projectName);
+
+  window.location.href ="users.html";
+});
