@@ -256,7 +256,26 @@ AuthForge is a backend authentication project built using Node.js and Express.js
 -Debugged the connection and response floe between both systems
 -Confirmed that Grint communicate with AuthForge for authentication-related operations.
 -Improved the overall integration between the application and the AuthForge authentication service.
- 
+
+# DAY 25 — Grint Integration Setup
+
+Today I continued working on the integration between my Grint practice project and AuthForge.
+
+I wanted Grint to communicate with AuthForge using an API key instead of keeping the key directly inside the code.
+
+### What I worked on
+
+- Added Vite to the Grint project.
+- Created a `.env` file for storing the AuthForge API key.
+- Configured Vite to access the environment variable from `signup.js`.
+- Updated the signup script to use `import.meta.env`.
+- Updated the HTML script to load `signup.js` as a module.
+- Tested the Grint project through the Vite development server.
+- Confirmed that the AuthForge API key can be loaded successfully.
+- Added `.env` and `node_modules` to `.gitignore`.
+- Added the Grint project to GitHub.
+
+
  ## Upcoming Features:
  -Duplicate Username & Email Validation
  -JWT Authentication
@@ -268,7 +287,10 @@ AuthForge is a backend authentication project built using Node.js and Express.js
  - Email Verification
  - Role-Based Authntication
  - Crud Operations
-
+ - Create Project Name
+ - Generate Project API KEY
+ - Create a test Project
+ - 
 
 
 ## Author:
