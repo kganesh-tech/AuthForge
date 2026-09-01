@@ -275,6 +275,17 @@ I wanted Grint to communicate with AuthForge using an API key instead of keeping
 - Added `.env` and `node_modules` to `.gitignore`.
 - Added the Grint project to GitHub.
 
+DAY 26 — API Key Project Identification
+
+• Added API key verification in AuthForge
+• Used bcrypt to compare the incoming API key with the stored hashed API key
+• Traversed project API keys to find the matching project
+• Identified the associated projectId from the verified API key
+• Identified the associated webName from the verified API key
+• Added invalid API key handling
+• Connected the Grint project with AuthForge using the generated API key
+• Successfully verified the Grint → AuthForge connection
+
 
  ## Upcoming Features:
  -Duplicate Username & Email Validation
