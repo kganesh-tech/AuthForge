@@ -51,11 +51,13 @@ fs.readFile("users.json", "utf-8" , async(err , data) => {
    fs.writeFile("users.json" , JSON.stringify(users , null, 2) , (err) => {
       if(err) {
         return res.status(500).json({
+            success : false,
             message : "unable to write the file"
         });
       }
        console.log("Reached res.json()");
       res.json({
+        success : true,
         message : "user registered successfully"
 
    });
@@ -478,7 +480,8 @@ fs.readFile("projects.json" , "utf-8" , async(err,data) => {
 });
 });
 
-app.post("/users/test-connection", (req, res) => {
+app.post("/users/test-connection", async (req, res) => {
+
     const username = req.body.username;
     const email = req.body.email;
     const password = req.body.password;
@@ -489,16 +492,72 @@ app.post("/users/test-connection", (req, res) => {
         email,
         password
     };
-    
+
     console.log("Grint connected to AuthForge successfully");
-    console.log("API key received from GRINT: " , API_KEY);
+    console.log("API key received from GRINT:", API_KEY);
+    console.log("Users:", {
+        username,
+        email
+    });
 
-    console.log("Users:" , users);
-    
+    fs.readFile("projects.json", "utf-8", async (err, data) => {
 
-    res.status(200).json({
-        message: "Grint connected to AuthForge successfully",
-        Project : users
+        if (err) {
+            return res.status(500).json({
+                message: "Error in reading file"
+            });
+        }
+
+        const projects = JSON.parse(data);
+
+        let project = null;
+
+        for (const p of projects) {
+
+    console.log("Checking project:", p.webName);
+
+    if (!p.apiKeys || p.apiKeys.length === 0) {
+        continue;
+    }
+
+    for (const apiKey of p.apiKeys) {
+
+        if (!apiKey.apiKey) {
+            continue;
+        }
+
+        const isMatch = await bcrypt.compare(
+            API_KEY.trim(),
+            apiKey.apiKey
+        );
+
+        console.log("Match:", isMatch);
+
+        if (isMatch) {
+            project = p;
+            break;
+        }
+    }
+
+    if (project) {
+        break;
+    }
+}
+
+        if (!project) {
+            return res.status(401).json({
+                message: "Invalid API key"
+            });
+        }
+
+        console.log("Project ID:", project.projectId);
+        console.log("Web Name:", project.webName);
+
+        return res.status(200).json({
+            message: "Grint connected to AuthForge successfully",
+            projectId: project.projectId,
+            webName: project.webName
+        });
     });
 });
 

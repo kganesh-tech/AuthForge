@@ -24,10 +24,11 @@ form.addEventListener("submit", async function(event) {
         });
 
         const data = await response.json();
-
+          if(data.message){
         alert(data.message);
+          }
 
-        if (data.message === "user registered successfully") {
+        if (data.success === true ) {
 
             localStorage.setItem("fullName", users.fullName);
             localStorage.setItem("username", users.username);

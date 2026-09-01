@@ -1154,20 +1154,12 @@
     "Description": "database platform",
     "apiKeys": [
       {
-        "keyId": "key_8a495606a854141a",
+        "keyId": "key_03a1f2943f1f4746",
         "keyName": "Grint development",
         "environment": "development",
-        "apiKey": "$2b$10$1ahRPBxdP2ib94Em7TE9YOSp2VEWE0kaaRrw3o5MMoPdqJH34iirK",
+        "apiKey": "$2b$10$caLIP5sSyZtCT38htbo19uI26CNPm7085ltr.ys9Mfy/NzlfIPr8e",
         "status": "active",
-        "createdAt": "2026-08-25T13:31:36.910Z"
-      },
-      {
-        "keyId": "key_77c80b3acce4af6a",
-        "keyName": "Grint Development",
-        "environment": "development",
-        "apiKey": "$2b$10$s/Nd8ULyjEFg9fDo5XBkIe0S1mOrCHFgh5BWyUhAsr2MFF.axnDe.",
-        "status": "active",
-        "createdAt": "2026-08-31T11:58:50.686Z"
+        "createdAt": "2026-09-01T17:47:43.972Z"
       }
     ]
   }
