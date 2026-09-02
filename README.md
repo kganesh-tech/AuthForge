@@ -275,7 +275,7 @@ I wanted Grint to communicate with AuthForge using an API key instead of keeping
 - Added `.env` and `node_modules` to `.gitignore`.
 - Added the Grint project to GitHub.
 
-DAY 26 — API Key Project Identification
+## DAY 26 — API Key Project Identification
 
 • Added API key verification in AuthForge
 • Used bcrypt to compare the incoming API key with the stored hashed API key
@@ -285,6 +285,15 @@ DAY 26 — API Key Project Identification
 • Added invalid API key handling
 • Connected the Grint project with AuthForge using the generated API key
 • Successfully verified the Grint → AuthForge connection
+
+##  Day 27- client users dislayed on the users section of the client project
+- Connected the AuthForge Users dashboard with the backend.
+- Implemented project-specific user retrieval.
+- Displayed registered users dynamically in the Users table.
+- Fixed the frontend user-rendering issues.
+- Made the **Total Users** count dynamic.
+- Tested the complete flow from Grint → AuthForge → user storage → Users dashboard.
+- Continued fixing and stabilizing the existing V3 functionality.
 
 
  ## Upcoming Features:
