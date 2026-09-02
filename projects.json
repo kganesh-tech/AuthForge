@@ -1161,6 +1161,23 @@
         "status": "active",
         "createdAt": "2026-09-01T17:47:43.972Z"
       }
+    ],
+    "users": [
+      {
+        "username": "Ganesh",
+        "email": "k.ganesh6286@gmail.com",
+        "password": "Ganesh"
+      },
+      {
+        "username": "Bharath",
+        "email": "k.ganesh6286@gmail.com",
+        "password": "Ganesh"
+      },
+      {
+        "username": "Naveen",
+        "email": "navven123@gmail.com",
+        "password": "$2b$10$r8BPk3/CDhj63aUd.3OlIetgz38uZwuTm8oduOLrx2zOoulrAVtkm"
+      }
     ]
   }
 ]

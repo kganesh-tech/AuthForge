@@ -487,11 +487,7 @@ app.post("/users/test-connection", async (req, res) => {
     const password = req.body.password;
     const API_KEY = req.headers["x-api-key"];
 
-    const users = {
-        username,
-        email,
-        password
-    };
+    
 
     console.log("Grint connected to AuthForge successfully");
     console.log("API key received from GRINT:", API_KEY);
@@ -500,7 +496,7 @@ app.post("/users/test-connection", async (req, res) => {
         email
     });
 
-    fs.readFile("projects.json", "utf-8", async (err, data) => {
+    fs.readFile("projects.json", "utf-8", async(err, data) => {
 
         if (err) {
             return res.status(500).json({
@@ -553,11 +549,58 @@ app.post("/users/test-connection", async (req, res) => {
         console.log("Project ID:", project.projectId);
         console.log("Web Name:", project.webName);
 
-        return res.status(200).json({
-            message: "Grint connected to AuthForge successfully",
-            projectId: project.projectId,
-            webName: project.webName
+        if(!project.users) {
+            project.users = [];
+        }
+
+        const hashedpassword = await bcrypt.hash(password , 10);
+
+        project.users.push({
+            username,
+            email,
+            password : hashedpassword
         });
+
+        fs.writeFile("projects.json" , JSON.stringify(projects , null , 2) ,"utf-8" , (err) => {
+            if(err) {
+                return res.status(400).json({
+                    message : "error in saving user"
+                });
+            }
+
+            console.log("User saved to project:" , project.webName);
+              return res.status(200).json({
+                message : "User saved successfully",
+                projectId : project.projectId,
+                webName : project.webName
+              });
+
+        });
+
+    });
+});
+
+app.get("/projects/:projectId/users" , (req,res) => {
+    const projectId = req.params.projectId;
+
+    fs.readFile("projects.json" , "utf-8" , (err,data) => {
+        if(err){
+            return res.status(400).json({
+                message : "Error in reading projects"
+            });
+        }
+
+        const projects = JSON.parse(data);
+
+        const project = projects.find(p => p.projectId === projectId);
+        if(!project) {
+            return res.status(400).json({
+                message : "Project not found"
+            });
+        }
+        return res.status(200).json(
+            project.users || []
+        );
     });
 });
 

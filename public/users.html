@@ -16,7 +16,7 @@
                 <p>Manage users registered in your project.</p>
             </div>
 
-            <button class="add-user-btn">+ Add User</button>
+            
         </div>
 
         <div class="stats-container">
@@ -25,7 +25,7 @@
                 <div class="stat-icon">👥</div>
                 <div>
                     <span>Total Users</span>
-                    <h2>0</h2>
+                    <h2 id="totalUsers">0</h2>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                 <div class="stat-icon">✓</div>
                 <div>
                     <span>Active Users</span>
-                    <h2>0</h2>
+                    <h2 id="activeUsers">0</h2>
                 </div>
             </div>
 
@@ -41,7 +41,7 @@
                 <div class="stat-icon">●</div>
                 <div>
                     <span>New Users</span>
-                    <h2>0</h2>
+                    <h2 id="newUsers">0</h2>
                 </div>
             </div>
 
@@ -72,23 +72,16 @@
                         <tr>
                             <th>User</th>
                             <th>Email</th>
-                            <th>Status</th>
+                            <th>password</th>
+                            <th>status</th>
                             <th>Joined</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id ="usersTableBody">
 
-                        <tr>
-                            <td colspan="5">
-                                <div class="empty-state">
-                                    <div class="empty-icon">👥</div>
-                                    <h3>No users yet</h3>
-                                    <p>Users who sign up through your AuthForge API will appear here.</p>
-                                </div>
-                            </td>
-                        </tr>
+                        
 
                     </tbody>
 
