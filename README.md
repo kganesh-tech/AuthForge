@@ -295,6 +295,9 @@ I wanted Grint to communicate with AuthForge using an API key instead of keeping
 - Tested the complete flow from Grint → AuthForge → user storage → Users dashboard.
 - Continued fixing and stabilizing the existing V3 functionality.
 
+## DAY-28:
+- working on some bugs for today like when a different user is opening his account and when he reach to the dashboard the projects of the X user are also appearing in his dashboard. 
+
 
  ## Upcoming Features:
  -Duplicate Username & Email Validation
